@@ -5,8 +5,6 @@ exclude:
 sass:
   style: :compressed
 
-theme: jekyll-theme-primer
-
 github:
   private: false
   license:
