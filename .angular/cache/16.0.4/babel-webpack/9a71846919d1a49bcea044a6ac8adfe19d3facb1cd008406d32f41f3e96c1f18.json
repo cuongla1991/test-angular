@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const getDateYYYYMMDD = date => {\n  let m = `${date.getMonth() + 1}`;\n  if (m.length === 1) {\n    m = `0${m}`;\n  }\n  let d = `${date.getDate()}`;\n  if (d.length === 1) {\n    d = `0${d}`;\n  }\n  return `${date.getFullYear()}-${m}-${d}`;\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
