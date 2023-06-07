@@ -1,0 +1,27 @@
+<div class="list-container">
+  <input
+    type="text"
+    placeholder="Search task by title..."
+    [(ngModel)]="searchText"
+  />
+
+  <div *ngFor="let item of data; let i = index">
+    <div class="item"
+         [ngClass]="{'done': item.isDone }"
+         *ngIf="item.name.includes(searchText)">
+      <label class="checkbox-container">{{item.name}}
+        <input
+          type="checkbox"
+          [value]="checkeds.includes(i)"
+          (change)="onChangeChecked(i)"
+        >
+        <span class="checkmark"></span>
+      </label>
+      <div class="button-group" *ngIf="checkeds.includes(i)">
+        <button class="done-btn" (click)="onChangeDone(item)">{{item.isDone ? "Undone" : "Done"}}</button>
+        <button class="detail-btn" (click)="onDetail(item)">Detail</button>
+        <button class="remove-btn" (click)="onRemove(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

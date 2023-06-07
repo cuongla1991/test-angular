@@ -1,0 +1,24 @@
+.add-container {
+  .column {
+    width: 50%;
+    box-sizing: border-box;
+  }
+  .date {
+    padding-right: 10px;
+  }
+  .priority {
+    padding-left: 10px;
+  }
+  button {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .add-container {
+    .column {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}

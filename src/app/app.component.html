@@ -1,0 +1,25 @@
+<div class="app-container">
+  <app-list
+    [data]="todos"
+    (detail)="onDetail($event)"
+    (remove)="onRemove($event)"
+    (changeDone)="onChangeDone($event)"
+  >
+  </app-list>
+  <div class="title">
+    {{formState === "add" ? "New Task" : "Edit Task"}}
+  </div>
+  <app-add
+    [formState]="formState"
+    [formData]="form"
+    (submit)="onSubmit($event)"
+  >
+  </app-add>
+  <button
+    *ngIf="formState === 'edit'"
+    class="cancel-btn"
+    (click)="onCancel()"
+  >
+    Cancel
+  </button>
+</div>

@@ -1,0 +1,34 @@
+<div class="add-container">
+  <input
+    [ngClass]="{'error': shouldValidate && !formData.name}"
+    type="text"
+    placeholder="Add new task..."
+    [(ngModel)]="formData.name"
+  />
+  <div *ngIf="shouldValidate && !formData.name" class="error-text">This field is required</div>
+  <label>Description</label>
+  <textarea
+    [(ngModel)]="formData.description"
+  ></textarea>
+  <div class="row">
+    <div class="column date">
+      <label>Due Date</label>
+      <input
+        type="date"
+        [min]="getMinDate()"
+        [(ngModel)]="formData.dueDate"
+      />
+    </div>
+    <div class="column priority">
+      <label>Priority</label>
+      <select
+        [(ngModel)]="formData.priority"
+      >
+        <option value="low">Low</option>
+        <option value="normal">Normal</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+  </div>
+  <button (click)="onSubmit()">{{formState === "add" ? "Add" : "Update"}}</button>
+</div>

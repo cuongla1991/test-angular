@@ -1,0 +1,44 @@
+.list-container {
+  .item {
+    border: 1px solid #cccccc;
+    padding: 5px 335px 5px 10px;
+    position: relative;
+    margin-bottom: 2px;
+    &.done {
+      border-color: #45a049;
+    }
+    button {
+      width: 100px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      &.done-btn {
+        right: 230px;
+        background: #4CAF50;
+      }
+      &.detail-btn {
+        right: 120px;
+        background: cornflowerblue;
+      }
+      &.remove-btn {
+        background: indianred;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .list-container {
+    .item {
+      padding-right: 10px;
+      .button-group {
+        display: flex;
+        justify-content: space-around;
+      }
+      button {
+        position: unset;
+      }
+    }
+  }
+}
