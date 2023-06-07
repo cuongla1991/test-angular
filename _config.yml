@@ -5,7 +5,7 @@ exclude:
 sass:
   style: :compressed
 
-theme: "Architect"
+theme: "Time machine"
 
 github:
   private: false
